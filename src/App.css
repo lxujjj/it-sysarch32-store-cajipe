@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.App {
+  padding: 20px;
+}
+
+.main-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 200px;
+  color: #333;
+}
+
+.tshirts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tshirt-card {
+  width: 300px;
+  height: 450px;
+  background-color: #f7d7d7;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure button is at the bottom */
+}
+
+.tshirt-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0; /* Round the top corners of the image */
+}
+
+.tshirt-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.brand,
+.name {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price {
+  margin-bottom: 10px;
+  color: rgb(8, 8, 8);
+}
+
+.stocks {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.buy-button {
+  background-color: #f04;
+  color: #fff;
+  padding: 8px 20px; /* Increase padding for button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center the button horizontally */
+}
+
+.buy-button:hover {
+  background-color: #c02;
+}
+
+.list {
+  margin-left: 80px;
+  margin-bottom: 15px;
+  color: #333;
+}
