@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../App.css'
+import Header from "../components/Header.jsx";
 import {db} from "../config/firebase";
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -28,24 +29,39 @@ function Details() {
   }, [id]); // Trigger effect when id changes
 
   return (
-    <div>
-      <h2>Product Details</h2>
+    <div className="container">
+          <Header/>
       {tshirtDetails ? (
-        <div className="tshirts-container">
-          <div key={tshirtDetails.id} className="tshirt-card">
-            {tshirtDetails.image && (
-              <img
-                className="tshirt-image"
-                src={tshirtDetails.image}
-                alt={tshirtDetails.name}
-              />
-            )}
-            <div className="tshirt-details">
-              <h2 className="brand">{tshirtDetails.brand}</h2>
-              <p className="name">{tshirtDetails.name}</p>
-              <p className="price">Price: ₱{tshirtDetails.price}</p>
-              <p className="stocks">Stocks: {tshirtDetails.stocks}</p>
-            </div>
+        <div className="product-details">
+          {tshirtDetails.image && (
+            <img
+              className="product-image"
+              src={tshirtDetails.image}
+              alt={tshirtDetails.name}
+            />
+          )}
+          <div className="product-info">
+            <h1 className="name">{tshirtDetails.name}</h1>
+            <br></br>
+            <p className="price">Price: ₱{tshirtDetails.price}</p>
+            <p className="stocks">Stocks: {tshirtDetails.stocks}</p>
+            <button className="size-button">
+              S
+            </button>
+            <button className="size-button">
+              M
+            </button>
+            <button className="size-button">
+              L
+            </button>
+            <button className="size-button">
+              XL
+            </button>
+            <br></br>
+            <button className="add-to-cart">
+              Add to Cart
+            </button>
+            <p className="earn">Earn up to 2 ABS Points calculated at checkout.</p>
           </div>
         </div>
       ) : (
@@ -54,5 +70,6 @@ function Details() {
     </div>
   );
 }
+
 
 export default Details;

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
-import '../App.css'
+import '../App.css';
+import coverImage from '../logo/cover.jpg';
+import Header from "../components/Header.jsx";
 import {db} from "../config/firebase";
 import {getDocs, collection} from 'firebase/firestore';
 
@@ -35,7 +37,16 @@ useEffect(() => {
   };
   return (
     <div className="App">
+            <Header/>
       <h1 className="main-heading">ALL BRANDS SHOP</h1>
+      <div className="cover-container">
+        <img
+          className="cover-image"
+          src={coverImage}
+          alt="Cover Image"
+        />
+      </div>
+      <hr className="custom-hr" />
       <h2 className="list">Products List</h2>
       <div className="tshirts-container">
         {tshirts.map((tshirt) => (
